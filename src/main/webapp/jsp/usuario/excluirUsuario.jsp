@@ -4,7 +4,8 @@
 
 
 <%
-        Long idUsu = request.getParameter("id");
+        String cod request.getParameter("id");
+		Long idUsu = Integer.parseInt(cod);
         Usuario usuEntrada = new Usuario(idUsu);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.excluir(usuEntrada);

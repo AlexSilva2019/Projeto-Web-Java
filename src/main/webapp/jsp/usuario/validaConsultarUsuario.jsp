@@ -1,14 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="projectAppMusic.bean.Usuario"%>
 <%@page import="projectAppMusic.controller.ControllerUsuario"%>
-
+<%@page import="java.util.List"%>
 
 <%
     String login = request.getParameter("LOGIN");
     Usuario  usu = new Usuario(login);
     ControllerUsuario usucont = new ControllerUsuario();
     List<Usuario> usus = usucont.listar(usu);
-    Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
+   // Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
     String url = "PBUSCA=" + usu.getLogin()+"&ID=" ;
 %>
 
@@ -35,10 +35,8 @@
                             <td><%=listaUsuario.getLogin()%></td>
                             <td><%=listaUsuario.getSenha()%></td>
                             <td><%=listaUsuario.getStatus()%></td>
-                            <% if (usuLogado.getTipo().equals("ADM")) { %>
                                 <td><a href="excluirUsuario.jsp?<%=url + listaUsuario.getId()%>">Excluir</a></td>
                                 <td><a href="alterarUsuario.jsp?<%=url + listaUsuario.getId()%>">Alterar</a></td>
-                            <% } %>
                         </tr>
                     <% } %>
                 </tbody>

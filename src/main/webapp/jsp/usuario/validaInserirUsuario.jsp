@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="projectAppMusic.bean.Usuario"%>
 <%@page import="projectAppMusic.controller.ControllerUsuario"%>
-
+<%@page import="projectAppMusic.controller.ControllerPessoa"%>
 
 <%
     String login = request.getParameter("LOGIN");
@@ -11,8 +11,8 @@
     
     Usuario usu = new Usuario(login,senha,status,nome);
     
-    ControllerPessoa  controllerPessoa = new  ControllerPessoa();
-    usuEntrada = controllerPessoa.inserir(usuEntrada);
+    ControllerPessoa  controllerPessoa = new ControllerPessoa();
+    usu = controllerPessoa.inserir(usu);
     
     ControllerUsuario usucont = new ControllerUsuario();
     usu = usucont.inserir(usu);

@@ -10,6 +10,7 @@
             Login: <input type="text" name="LOGIN" value=""> <br>
             Senha: <input type="password" name="SENHA" value=""> <br>
             Status: <input type="text" name="STATUS" value=""> <br>
+            Nome: <input type="text" name="NOME" value=""> <br>
             <input type="submit" name="Enviar" value="OK">
         </form>
         </div>
