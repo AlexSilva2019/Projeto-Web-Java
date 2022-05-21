@@ -4,14 +4,13 @@
 
 
 <%
-    String cod = request.getParameter("ID");
-    int id = Integer.parseInt(cod);
+    Long id = Long.parseLong(request.getParameter("ID"));
     String login = request.getParameter("LOGIN");
     String senha = request.getParameter("SENHA");
     String status = request.getParameter("STATUS");
     String pbusca = request.getParameter("PBUSCA");
 
-    Usuario usu = new Usuario(id,login,senha,status,tipo);
+    Usuario usu = new Usuario(id,login,senha,status);
     ControllerUsuario usuCont = new ControllerUsuario();
     usu = usuCont.alterar(usu);
     // REDIRECIONA PARA A PAG LOGIN.JSP

@@ -4,13 +4,13 @@
 
 
 <%
-        String cod request.getParameter("id");
-		Long idUsu = Integer.parseInt(cod);
+        String cod = request.getParameter("ID");
+		Long idUsu = Long.parseLong(cod);
         Usuario usuEntrada = new Usuario(idUsu);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.excluir(usuEntrada);
         String pbusca = request.getParameter("PBUSCA");
-    
+        System.out.print(cod + "TESTE2");
     // REDIRECIONA PARA A PAG LOGIN.JSP
     String url = "validaConsultarUsuario.jsp?LOGIN=" + pbusca;
     response.sendRedirect(url);

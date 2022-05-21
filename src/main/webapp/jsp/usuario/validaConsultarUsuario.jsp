@@ -10,6 +10,7 @@
     List<Usuario> usus = usucont.listar(usu);
    // Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
     String url = "PBUSCA=" + usu.getLogin()+"&ID=" ;
+    System.out.print(usu.getLogin()+ "TESTE");
 %>
 
 <html>
@@ -31,12 +32,12 @@
                 <tbody>
                     <% for (Usuario listaUsuario : usus) { %>
                         <tr>
-                            <td><%=listaUsuario.getId()%></td>
+                            <td><%=listaUsuario.getIdUsu()%></td>
                             <td><%=listaUsuario.getLogin()%></td>
                             <td><%=listaUsuario.getSenha()%></td>
                             <td><%=listaUsuario.getStatus()%></td>
-                                <td><a href="excluirUsuario.jsp?<%=url + listaUsuario.getId()%>">Excluir</a></td>
-                                <td><a href="alterarUsuario.jsp?<%=url + listaUsuario.getId()%>">Alterar</a></td>
+                                <td><a href="excluirUsuario.jsp?<%=url + listaUsuario.getIdUsu()%>">Excluir</a></td>
+                                <td><a href="alterarUsuario.jsp?<%=url + listaUsuario.getIdUsu()%>">Alterar</a></td>
                         </tr>
                     <% } %>
                 </tbody>
