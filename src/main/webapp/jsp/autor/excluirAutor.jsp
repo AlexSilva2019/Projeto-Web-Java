@@ -1,17 +1,15 @@
-<%-- 
-    Document   : excluirAutor
-    Created on : 19 de mai. de 2022, 20:46:20
-    Author     : User
---%>
-
-<%@page contentType="text/html" pageEncoding="windows-1252"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="projectAppMusic.bean.Autor"%>
+<%@page import="projectAppMusic.controller.ControllerAutor"%>
+<%
+		String cod = request.getParameter("ID");
+		Long idAutor = Long.parseLong(cod);
+		Autor autEntrada = new Autor(idAutor);
+		ControllerAutor contAut = new ControllerAutor();
+		Autor autSaida = contAut.excluir(autEntrada);
+		String pbusca = request.getParameter("PBUSCA");
+		
+		// REDIRECIONA PARA A PAG LOGIN.JSP
+		String url = "validarConsultarAutor.jsp?LOGIN=" + pbusca;
+		response.sendRedirect(url);
+%>

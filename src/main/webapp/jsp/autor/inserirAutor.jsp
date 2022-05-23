@@ -1,17 +1,14 @@
-<%-- 
-    Document   : inserirAutor
-    Created on : 19 de mai. de 2022, 20:45:30
-    Author     : User
---%>
-
-<%@page contentType="text/html" pageEncoding="windows-1252"%>
-<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>JSP Page</title>
-    </head>
+    <%@include file="../../inc/materalizeWeb.inc" %>
+    <title>INSERIR - AUTOR</title>
     <body>
-        <h1>Hello World!</h1>
+       <div class="container"/>
+        <h1>INSERIR AUTOR</h1>
+        <form name="inserirAutor" action="validarInserirAutor.jsp" method="get">
+            Nome: <input type="text" name="NOME" value=""> <br>
+            <input type="submit" name="Enviar" value="OK">
+        </form>
+        </div>
     </body>
 </html>

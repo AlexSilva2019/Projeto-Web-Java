@@ -22,8 +22,8 @@
     <title>SISTEMA </title>
     <body>
             <!-- Dropdown1 Trigger -->
-            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Manter Usuário</a>        
-            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown2'>Manter Pessoa</a>        
+            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Usuário</a>        
+            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown2'>Autor</a>        
             <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown3'>Manter Controle de Acesso</a>        
 
                 <!-- Dropdown1 Structure -->
@@ -38,12 +38,12 @@
 
                 <!-- Dropdown2 Structure -->
                 <ul id='dropdown2' class='dropdown-content'>
-                    <li><a href="../pessoa/inserirPessoa.jsp"> InseriPessoa </a></li>
-                    <li><a href="../pessoa/consultarPessoa.jsp"> ConsultaPessoa </a></li>
+                    <li><a href="../autor/inserirAutor.jsp"> InserirAutor </a></li>
+                    <li><a href="../autor/consultarAutor.jsp"> ConsultarAutor </a></li>
                 </ul>
 
                 <ul id='dropdown2' class='dropdown-content'>
-                    <li><a href="../pessoa/consultarPessoa.jsp"> ConsultaPessoa </a></li>
+                    <li><a href="../autor/consultarAutor.jsp"> ConsultarAutor </a></li>
                 </ul>
 
                 <!-- Dropdown3 Structure -->

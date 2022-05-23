@@ -10,7 +10,7 @@
     List<Usuario> usus = usucont.listar(usu);
    // Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
     String url = "PBUSCA=" + usu.getLogin()+"&ID=" ;
-    System.out.print(usu.getLogin()+ "TESTE");
+    
 %>
 
 <html>
