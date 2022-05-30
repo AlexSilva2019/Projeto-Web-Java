@@ -25,7 +25,7 @@
             <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Usuário</a>        
             <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown2'>Autor</a>
             <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown3'>Composição</a>         
-            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown4'>Manter Controle de Acesso</a>        
+            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown4'>Musica</a>        
 
                 <!-- Dropdown1 Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
@@ -59,14 +59,14 @@
                 
                 <!-- Dropdown4 Structure -->
                 <ul id='dropdown4' class='dropdown-content'>
-                    <li><a href="../usupes/inserirRelacaoUsuarioPessoa.jsp"> InseriUsuarioPessoa </a></li>
-                    <li><a href="../usupes/consultarRelacaoUsuarioPessoa.jsp"> ConsultaUsuarioPessoa </a></li>
+                    <li><a href="../musica/inserirRelacaoAutorComposicao.jsp"> InserirMusica</a></li>
+                    <li><a href="../musica/consultarRelacaoAutorComp.jsp"> ConsultarMusica</a></li>
                 </ul>
 
                 <ul id='dropdown4' class='dropdown-content'>
-                    <li><a href="../usuario/consultarUsuarioPessoa.jsp"> ConsultaUsuarioPessoa </a></li>
+                    <li><a href="../musica/consultarRelacaoAutorComp.jsp"> ConsultarMusica</a></li>
                 </ul>
-
-
+                
+                
     </body>
 </html>

@@ -3,7 +3,7 @@
 <%@page import="projectAppMusic.controller.ControllerComposicao"%>
 <%
     
-	Long cod = Long.parseLong(request.getParameter("ID"));
+    Long cod = Long.parseLong(request.getParameter("ID"));
     String nome = request.getParameter("NOME");
     String duracao = request.getParameter("DURACAO");
     String pbusca = request.getParameter("PBUSCA");
