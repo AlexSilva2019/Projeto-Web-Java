@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+    <%@include file="../../inc/materalizeWeb.inc" %>
+    <title>CONSULTAR - MUSICA</title>
+    <body>
+       <div class="container"/>
+       <h1>CONSULTAR MUSICA</h1>
+       <form name="consultarAutor" action="validarConsultarRelacaoAutorComp.jsp" method="GET">
+           Id_musica <input type="" name ="ID_da_Musica" value=""> <br>
+           <input type="submit" name ="Enviar" value="Enviar"> <br>
+       </form>
+       </div>
+    </body>
 </html>

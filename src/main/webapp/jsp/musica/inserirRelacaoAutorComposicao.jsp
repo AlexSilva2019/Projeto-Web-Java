@@ -6,14 +6,16 @@
 <%@page import="projectAppMusic.controller.ControllerComposicao"%>
 
 <%
-    Autor aut = new Autor("");
+    
     ControllerAutor autcont = new ControllerAutor();
+	Autor aut = new Autor("");
     List<Autor> listaAutores = autcont.listar(aut);
-
-    Composicao compEntrada = new Composicao("");
+	
     ControllerComposicao ca  = new ControllerComposicao();
+    Composicao compEntrada = new Composicao("");
     List<Composicao> listacomposicao = ca.listar(compEntrada);
 
+  
 %>
 
 <html>
@@ -22,14 +24,14 @@
     <body>
         <div class="container"/>
             <h1>INSERIR MUSICA </h1>
-            <form name="inserirRelacaoAutorComposicao" action="validarrRelacaoAutorComp.jsp" method="POST">
+            <form name="inserirRelacaoAutorComposicao" action="validarRelacaoAutorComp.jsp" method="POST">
                 <table>
                     <tr>
                         <td>Autor</td>
                         <td>
-                            <select NAME ="NOME" class="browser-default">
+                            <select name="ID_AUTOR" class="browser-default">
                                 <% for (Autor  listagemAutor: listaAutores) { %>
-                                    <option value="<%=aut.getIdAutor()%>"><%=aut.getNome()%></option>
+                                    <option value="<%=listagemAutor.getIdAutor()%>"><%=listagemAutor.getNome()%></option>
                                 <% } %>
                             </select> 
                         </td>
@@ -37,9 +39,9 @@
                     <tr>
                         <td>Composição</td>
                         <td>
-                            <select NAME="NOME" class="browser-default">
+                            <select name="ID_COMPOSICAO" class="browser-default">
                                 <% for (Composicao listagemCmp: listacomposicao) { %>
-                                    <option value="<%=listacomposicao.getCodigo_composicao()%>"><%=listacomposicao.getNome_composicao()%></option>
+                                    <option value="<%=listagemCmp.getCodigo_composicao()%>"><%=listagemCmp.getNome_composicao()%></option>
                                 <% } %>
                             </select> 
                         </td>

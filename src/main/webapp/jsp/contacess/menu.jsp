@@ -60,11 +60,11 @@
                 <!-- Dropdown4 Structure -->
                 <ul id='dropdown4' class='dropdown-content'>
                     <li><a href="../musica/inserirRelacaoAutorComposicao.jsp"> InserirMusica</a></li>
-                    <li><a href="../musica/consultarRelacaoAutorComp.jsp"> ConsultarMusica</a></li>
+                    <li><a href="../musica/consultarRelacaoAutorComposicao.jsp"> ConsultarMusica</a></li>
                 </ul>
 
                 <ul id='dropdown4' class='dropdown-content'>
-                    <li><a href="../musica/consultarRelacaoAutorComp.jsp"> ConsultarMusica</a></li>
+                    <li><a href="../musica/consultarRelacaoAutorComposicao.jsp"> ConsultarMusica</a></li>
                 </ul>
                 
                 
