@@ -7,13 +7,11 @@
 
 <%
   
-    Long id = Long.parseLong((request.getParameter("ID_da_Musica")));
+    Long id = Long.parseLong((request.getParameter("id_musica")));
 	
  
  	Musica msc = new Musica(id);
-
     ControllerMusica muscCont  = new ControllerMusica();
-    
     List<Musica> listMusicas = muscCont.listar(msc);
     String url = "PBUSCA=" + msc.getId_musica() +"&ID=" ;
 %>
@@ -27,9 +25,7 @@
               <tr>
                   <th data-field="IdMusica">id_musica</th>
                   <th data-field="IdAutor">IdAutor</th>
-                  <th data-field="NomeAutor">NomeAutor</th>
-                  <th data-field="IdUComposicao">IdComposicao</th>
-                  <th data-field="NomeComposicao">NomeComposicao</th>
+                  <th data-field="IdComposicao">IdComposicao</th>
                   <th data-field="Excluir">Excluir</th>
                   <th data-field="Alterar">Alterar</th>
               </tr>
@@ -39,10 +35,9 @@
                     <% for (Musica listagemMusica : listMusicas) { %>
                         <tr>
                             <td><%=listagemMusica.getId_musica()%></td>
-                            <td><%=listagemMusica.getAutor()%></td>
-                            <td><%=listagemMusica.getAutor().getNome()%></td>
+                            <td><%=listagemMusica.getIdAutor()%></td>
                             <td><%=listagemMusica.getComposicao()%></td>
-                            <td><%=listagemMusica.getComposicao().getNome_composicao()%></td>
+
                             
                             
                                 <td><a href="excluirRelacaoAutorComposicao.jsp?<%=url + listagemMusica.getId_musica()%>">Excluir</a></td>
