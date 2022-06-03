@@ -1,68 +1,70 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
 <%@page import="projectAppMusic.bean.Autor"%>
 <%@page import="projectAppMusic.controller.ControllerAutor"%>
 <%@page import="projectAppMusic.bean.Composicao"%>
 <%@page import="projectAppMusic.controller.ControllerComposicao"%>
-    
+<%@page import="projectAppMusic.bean.Musica"%>
+<%@page import="projectAppMusic.controller.ControllerMusica"%>
+
+<%
+	ControllerAutor autCont = new ControllerAutor();
+    Autor aut = new Autor("");
+    List<Autor> autr = autCont.listar(aut);
+
+    ControllerComposicao cmpCont = new ControllerComposicao();
+    Composicao cmpEnt = new Composicao("");
+    List<Composicao> comp = cmpCont.listar(cmpEnt);
+
+    String id = request.getParameter("ID");
+    Long Id = Long.parseLong(id);
+    Musica msc = new Musica(Id);
+    ControllerMusica mscCont = new ControllerMusica();
+    msc = mscCont.buscar(msc);
+    String pbusca = request.getParameter("PBUSCA");
+
+%>
+
 <!DOCTYPE html>
-    <%
-        Long idAut = Long.parseLong(request.getParameter("ID"));
-        Autor autEntrada = new Autor(idAut);
-        ControllerAutor contAut = new ControllerAutor();
-        Composicao cmp = new Composicao(cod, "", "");
-	    ControllerComposicao ca = new ControllerComposicao();
-        
-	    cmp = ca.alterar(cmp);
-        Autor autSaida = contAut.alterar(autEntrada);
-        String pbusca = request.getParameter("PBUSCA");
- 		
-    %>
-    
 <html>
     <%@include file="../../inc/materalizeWeb.inc" %>
-    <title>ALTERAR - COMPOSICAO AUTOR</title>
+    <title>ALTERAR - MUSICA</title>
     <body>
-    	<div class="container"/>
-       	<h1>ALTERAR - COMPOSICAO AUTOR</h1>
-        <form name="alterarRelacaoAutorComposicao" action="validarAlterarRelacaoAutorComp.jsp" method="post">
+       <div class="container"/>
+       <h1>ALTERAR - MUSICA</h1>
+        <form name="alterarRelacaoAutorComposicao" action="validarAlterarRelacaoAutorComp.jsp" method="get">
             <table>
-    		<tr>
-              <td>Autor:</td>
-                       <td>
-                           <select NAME="NOME" class="browser-default">
-                               <% for (Autor aut : contAut) { %>
-                                   <% if( aut.getIdAutor() == idAut.getIdAutor()) { %>
-                                       <option selected value="<%=aut.getIdAutor()%>"><%=autSaida.getNome()%></option>
-                                   <% } else { %>
-                                       <option value="<%=aut.getIdAutor()%>"><%=autSaida.getNome()%></option>
-                                   <% } %>
-                               <% } %>
-                           </select> 
-                       </td>
-             </tr>
-
-       		 <tr>
-                        <td>Composicao:</td>
+                <tr>
+                    <td>Composicao:</td>
                         <td>
-                            <select NAME ="NOME" class="browser-default">
-                                <% for (Composicao comp : cmp) { %>
-                                    <% if( comp.getCodigo_composicao() == comp.getNome_composicao()) { %>
-                                        <option selected value="<%=comp.getCodigo_composicao()%>"><%=comp.getNome()%></option>
+                            <select NAME="ID_COMPOSICAO" class="browser-default">
+                                <% for (Composicao Comp : comp) { %>
+                                    <% if( Comp.getCodigo_composicao() == msc.getComposicao().getCodigo_composicao()) { %>
+                                        <option selected value="<%=Comp.getCodigo_composicao()%>"><%=Comp.getNome_composicao()%></option>
                                     <% } else { %>
-                                        <option value="<%=comp.getCodigo_composicao()%>"><%=comp.getNome()%></option>
+                                        <option value="<%=Comp.getCodigo_composicao()%>"><%=Comp.getNome_composicao()%></option>
                                     <% } %>
                                 <% } %>
                             </select> 
                         </td>
-             </tr>
-                    <tr>
-                        <td>Observação:</td>
-                        <td><input type="text" name="OBS" value="<%=usuPes.getObs()%>"></td>
-
+                </tr>
+                <tr>
+                        <td>Autor:</td>
+                        <td>
+                            <select NAME ="ID_AUTOR" class="browser-default">
+                                <% for (Autor autorL : autr) { %>
+                                    <% if(autorL.getIdAutor() == msc.getAutor().getIdAutor()) { %>
+                                        <option selected value="<%=autorL.getIdAutor()%>"><%=autorL.getNome()%></option>
+                                    <% } else { %>
+                                        <option value="<%=autorL.getIdAutor()%>"><%=autorL.getNome()%></option>
+                                    <% } %>
+                                <% } %>
+                            </select> 
+                        </td>
                     </tr>
+             
                 </table>    
-            <input type="HIDDEN" name="ID" value="<%=usuPes.getId()%>"> <br>
+            <input type="HIDDEN" name="ID" value="<%=msc.getId_musica()%>"> <br>
             <input type="HIDDEN" name="PBUSCA" value="<%=pbusca%>">
             <input type="submit" name="Enviar" value="OK">
         </form>

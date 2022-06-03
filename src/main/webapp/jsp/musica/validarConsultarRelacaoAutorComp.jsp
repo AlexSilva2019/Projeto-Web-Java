@@ -7,12 +7,11 @@
 
 <%
   
-    Long id = Long.parseLong((request.getParameter("id_musica")));
-	
- 
- 	Musica msc = new Musica(id);
+    String id = request.getParameter("id_musica");
+
+ 	Musica msc = new Musica();
     ControllerMusica muscCont  = new ControllerMusica();
-    List<Musica> listMusicas = muscCont.listar(msc);
+    List<Musica> listMusicas = muscCont.listar(id);
     String url = "PBUSCA=" + msc.getId_musica() +"&ID=" ;
 %>
 
@@ -35,8 +34,8 @@
                     <% for (Musica listagemMusica : listMusicas) { %>
                         <tr>
                             <td><%=listagemMusica.getId_musica()%></td>
-                            <td><%=listagemMusica.getIdAutor()%></td>
-                            <td><%=listagemMusica.getComposicao()%></td>
+                            <td><%=listagemMusica.getAutor().getIdAutor()%></td>
+                            <td><%=listagemMusica.getComposicao().getCodigo_composicao()%></td>
 
                             
                             
